@@ -1,7 +1,4 @@
-import java.sql.Array;
 import java.util.Arrays;
-
-import static java.lang.Integer.min;
 
 public class Array_Partition_I {
     public static void main(String[] args){
