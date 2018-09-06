@@ -1,3 +1,6 @@
+//滑动窗口问题，把所有字符映射到map数组中，如果s中含有p对应的字符，map对应－1，如果所走长度为p的长度，且count为零保存
+//角标，如果s中不含有对应的字符，mao对应-1；则改字符对应的数字必然为负数；最后进行判断，如果map[i]>=0说明原来p中包含这个
+// 字符，count++;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
