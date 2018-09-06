@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Find_All_Anagrams_in_a_String {
     public static void main(String[] args){
-//        String s="cbaebabacd",p="abc";
-        String s="abab",p="ab";
+        String s="cbaebabacd",p="abc";
+//        String s="abab",p="ab";
         System.out.print(findAnagrams(s,p));
     }
     public static List<Integer> findAnagrams(String s, String p) {
@@ -27,23 +27,22 @@ public class Find_All_Anagrams_in_a_String {
         int[] map=new int[256];
         for(char c: p.toCharArray())
             map[c]++;
-
-        for (int i = 0; i < l1 - l2; i++) {
-//            String tmp=new String();
-//            if(i==l1-l2)
-//                tmp = s.substring(i);
-//            else
-            String tmp = s.substring(i, i + l2 );
-            int j = 0;
-            for (; j < tmp.length(); j++) {
-                int[] m=new int[256];
-                m=map;
-                if(m[s.charAt(j)]-- >=1)
-                    l2--;
+        int left = 0, right = 0, count = p.length();
+        while (right < s.length()) {
+            if (map[s.charAt(right)] >= 1) {
+                count--;
             }
-            if(l2==0)
-                res.add(i);
-            l2=p.length();
+            map[s.charAt(right)]--;
+            right++;
+            if (count == 0) res.add(left);
+
+            if (right - left == p.length() ) {
+                if (map[s.charAt(left)] >= 0) {
+                    count++;
+                }
+                map[s.charAt(left)]++;
+                left++;
+            }
         }
         return res;
     }
