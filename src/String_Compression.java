@@ -1,34 +1,39 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+
 public class String_Compression {
     public static void main(String[] args) {
-//        String s = " , , , ,        a, eaefa ";
-        String s="";
-//        String s="Of all the gin joints in all the towns in all the world,   ";
-        System.out.print(countSegments(s));
+        char[] chars={'a','a','b','b','c','c','c'};
+        System.out.print(compress(chars));
     }
 
-    public static int countSegments(String s) {
-//        if(s.equals(""))
-//            return 0;
+    public static int compress(char[] chars) {
+//        HashMap<Character,Integer> map=new HashMap<>();
+//        for(int i=0;i<chars.length;i++){
+//            if(!map.containsKey(chars[i]))
+//                map.put(chars[i],1);
+//            else{
+//                int c=map.get(chars[i]);
+//                map.put(chars[i],c+1);
+//            }
+//        }
+//        int count=map.size();
+//        Collection<Integer> values=map.values();
+//        Iterator<Integer> iterator=values.iterator();
+//        while (iterator.hasNext()){
+//            int tmp=iterator.next();
+//            if(tmp>1)
+//                count+=String.valueOf(tmp).length();
+//        }
+//        return count;
+        Arrays.sort(chars);
         int count=0;
-//        if(s.charAt(0)==' ')
-//            count++;
-//        for(int i=1;i<s.length();i++){
-//            if(s.charAt(i)==' '&&s.charAt(i-1)==' ')
-//                count++;
-//        }
-//        for(int i=s.length()-1;i>s.length();i--){
-//            if(s.charAt(i)==' '&&s.charAt(i-1)==' ')
-//                count--;
-//            else
-//                break;
-//        }
-        String[] res=s.split(" ");
-        for(int i=0;i<res.length;i++)
-            System.out.print(res[i]+" ");
-        for(int i=0;i<res.length;i++){
-            if(!res[i].equals(""))
+        for(int i=0;i<chars.length-1;i++){
+            if(chars[i]!=chars[i+1])
                 count++;
         }
-        return count;
+
     }
 }
