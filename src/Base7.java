@@ -4,6 +4,8 @@ public class Base7 {
     }
 
     public static String convertToBase7(int num) {
+        if(num==0)
+            return "0";
         String res="";
         int flag=-1;
         if(num<0){
