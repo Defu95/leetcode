@@ -55,10 +55,9 @@ public class Degree_of_an_Array {
         int num = -1, degree = 0;
         for (Map.Entry<Integer, int[]> ent : map.entrySet()) {
             if (ent.getValue()[0] > degree) {
-                degree=ent.getValue()[0];
-                if (ent.getValue()[0] > num)
-                    num = ent.getValue()[2] - ent.getValue()[1] + 1;
-            } else if(ent.getValue()[0]==degree) {
+                degree = ent.getValue()[0];
+                num = ent.getValue()[2] - ent.getValue()[1] + 1;
+            } else if (ent.getValue()[0] == degree) {
                 num = Math.min(num, ent.getValue()[2] - ent.getValue()[1] + 1);
             }
         }
