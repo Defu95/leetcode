@@ -41,9 +41,7 @@ public class Subdomain_Visit_Count {
         while (iterator.hasNext()) {
             Map.Entry entry = iterator.next();
             String tmp = "";
-            tmp += String.valueOf(entry.getValue());
-            tmp += " ";
-            tmp += (String) entry.getKey();
+            tmp = String.valueOf(entry.getValue()) + " " + (String) entry.getKey();
             res.add(tmp);
         }
         return res;
