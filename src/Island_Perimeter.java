@@ -8,32 +8,24 @@ public class Island_Perimeter {
     }
 
     public static int islandPerimeter(int[][] grid) {
-        int count=0;
-        for(int i=0;i<grid.length;i++)
-            for(int j=0;j<grid[0].length;j++){
-                if(grid[i][j]==1)
-                    count+=boundary(grid,i,j);
+        int count = 0;
+        for (int i = 0; i < grid.length; i++)
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == 1)
+                    count += boundary(grid, i, j);
             }
         return count;
     }
 
-    public static int boundary(int[][] grid,int i,int j){
-        int bound=0;
-        if(i-1<0)
+    public static int boundary(int[][] grid, int i, int j) {
+        int bound = 0;
+        if (i - 1 < 0 || grid[i - 1][j] == 0)
             bound++;
-        else if(grid[i-1][j]==0)
+        if (i + 1 > grid.length - 1 || grid[i + 1][j] == 0)
             bound++;
-        if(i+1>grid.length-1)
+        if (j - 1 < 0 || grid[i][j - 1] == 0)
             bound++;
-        else if(grid[i+1][j]==0)
-            bound++;
-        if(j-1<0)
-            bound++;
-        else if(grid[i][j-1]==0)
-            bound++;
-        if(j+1>grid[i].length-1)
-            bound++;
-        else if(grid[i][j+1]==0)
+        if (j + 1 > grid[i].length - 1 || grid[i][j + 1] == 0)
             bound++;
         return bound;
     }
