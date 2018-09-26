@@ -35,13 +35,15 @@ public class Uncommon_Words_from_Two_Sentences {
                 tmp.add((String) it.getKey());
         }
         String[] res = new String[tmp.size()];
-        Iterator<String> r = tmp.iterator();
-        int i = 0;
-        while (r.hasNext()) {
-            String R = r.next();
-            res[i] = R;
-            i++;
-        }
+//        Iterator<String> r = tmp.iterator();
+//        int i = 0;
+//        while (r.hasNext()) {
+//            String R = r.next();
+//            res[i] = R;
+//            i++;
+//        }
+        for(int i=0;i<tmp.size();i++)
+            res[i]=tmp.get(i);
         return res;
     }
 }
