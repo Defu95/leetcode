@@ -15,8 +15,10 @@ public class Letter_Case_Permutation {
 
     public static List<String> letterCasePermutation(String S) {
         List<String> res = new ArrayList<>();
-        if (S.length() <= 0)
+        if (S.length() <= 0) {
+            res.add(S);
             return res;
+        }
         char[] ch = S.toCharArray();
         Low_Captical(ch, res, 0);
         return res;
