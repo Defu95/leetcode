@@ -25,9 +25,9 @@ public class Add_Strings {
             return shouwei(i, carry, num1, res);
         } else if (j >= 0) {
             return shouwei(j, carry, num2, res);
-        } else{
-            if(carry==1)
-                return "1"+res;
+        } else {
+            if (carry == 1)
+                return "1" + res;
             else
                 return res;
         }
@@ -44,8 +44,8 @@ public class Add_Strings {
             res = String.valueOf(tmp) + res;
             i--;
         }
-        if(carry==1)
-            res="1"+res;
+        if (carry == 1)
+            res = "1" + res;
         return res;
     }
 }
