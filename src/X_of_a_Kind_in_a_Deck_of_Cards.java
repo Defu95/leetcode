@@ -22,26 +22,14 @@ public class X_of_a_Kind_in_a_Deck_of_Cards {
             if (flag == -1)
                 flag = it.getValue();
             else {
-                if (gy == -1) {
-                    gy = gongyue(flag, it.getValue());
-                    if (gy == 0)
-                        return false;
-                } else {
-                    if (gongyue(gy, it.getValue()) == 0)
-                        return false;
-                }
+                flag = gcd(flag, it.getValue());
             }
         }
-        return true;
+        return flag > 1;
     }
 
-    public static int gongyue(int a, int b) {
-        int c = 2;
-        while (c <= a && c <= b) {
-            if (a % c == 0 && b % c == 0)
-                return c;
-            c++;
-        }
-        return 0;
+    public static int gcd(int x, int y) {
+        if (x % y == 0) return y;
+        return gcd(y, x % y);
     }
 }
